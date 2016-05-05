@@ -61,7 +61,7 @@ class DocumentCrudTests : XCTestCase {
         // Check if DB exists
         couchDBClient.dbExists(dbName) {exists, error in
             if  error != nil  {
-                XCTFail("Failed checking existence of database \(self.dbName)")
+                XCTFail("Failed checking existence of database \(self.dbName). Error=\(error)")
             }
             else {
                 if  exists  {
@@ -75,7 +75,7 @@ class DocumentCrudTests : XCTestCase {
                     // Create database
                     couchDBClient.createDB(self.dbName) {db, error in
                         if  error != nil  {
-                            XCTFail("Failed creating the database \(self.dbName)")
+                            XCTFail("Failed creating the database \(self.dbName). Error=\(error)")
                         }
                         else {
                             self.database = db
