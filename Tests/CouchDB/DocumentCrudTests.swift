@@ -36,14 +36,14 @@ class DocumentCrudTests : XCTestCase {
     }
 
     var database: Database?
+    let documentId = "123456"
+    var jsonDocument: JSON?
 // To enable running Linux and OSX tests in parallel
 #if os(Linux)
-    let documentId = "123456-Linux"
+    let dbName = "kitura_db_Linux"
 #else
-    let documentId = "123456"
-#endif
-    var jsonDocument: JSON?
     let dbName = "kitura_db"
+#endif
 
     func testCrudTest() {
         let credentials = Utils.readCredentials()
