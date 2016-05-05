@@ -36,7 +36,12 @@ class DocumentCrudTests : XCTestCase {
     }
 
     var database: Database?
+// To enable running Linux and OSX tests in parallel
+#if os(Linux)
+    let documentId = "123456-Linux"
+#else
     let documentId = "123456"
+#endif
     var jsonDocument: JSON?
     let dbName = "kitura_db"
 
